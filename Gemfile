@@ -44,5 +44,12 @@ group :development do
   gem 'rubocop', require: false
 end
 
+group :test do
+  gem 'capybara', '~> 3.33'
+  gem 'vcr', '~> 6.0'
+  gem 'webmock', '~> 3.9', '>= 3.9.2'
+  gem 'webdrivers', '~> 4.4', '>= 4.4.1'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
