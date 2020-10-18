@@ -16,12 +16,12 @@ RECIPE_IMAGE_URLS = [
 
 describe 'Recipes', type: :system do
   describe 'List recipes', vcr: { cassette_name: 'list_recipes' } do
-    context 'a user is on the homepage' do
+    context 'when a user is on the homepage or list recipes page' do
       before do
         visit root_path
       end
 
-      it 'lists all the recipes' do
+      it 'lists all the recipe titles' do
         RECIPE_TITLES.each do |recipe_title|
           expect(page).to have_text(recipe_title)
         end
