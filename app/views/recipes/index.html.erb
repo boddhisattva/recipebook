@@ -1,0 +1,9 @@
+<% if @recipes.present? %>
+<h2>All recipes</h2>
+
+<div>
+  <%= render partial: "recipe", collection: @recipes, as: :recipe, cached: true %>
+</div>
+<% else %>
+"There are no recipes that are currently available"
+<% end %>
