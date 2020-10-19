@@ -1,10 +1,10 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe Recipe do
   let(:recipe_id) { '437eO3ORCME46i02SeCW46' }
   let(:recipe_id_without_associated_recipe_info) { '5jy9hcMeEgQ4maKGqIOYW6' }
 
-  describe "#photo_url" do
+  describe '#photo_url' do
     context 'given a recipe with an associated photo' do
       it 'gets the image url', vcr: { cassette_name: 'show_recipe' } do
         recipe = Recipe.find(recipe_id)
@@ -13,7 +13,6 @@ RSpec.describe Recipe do
       end
     end
   end
-
 
   describe '#tag_names' do
     context 'given a recipe that is associated with certain tags' do

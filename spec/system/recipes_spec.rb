@@ -30,7 +30,7 @@ describe 'Recipes', type: :system do
       it 'displays the recipe images' do
         recipe_image_urls = page.find_all('img').map { |image| image['src'] }
 
-         expect(recipe_image_urls).to match_array(RECIPE_IMAGE_URLS)
+        expect(recipe_image_urls).to match_array(RECIPE_IMAGE_URLS)
       end
     end
   end
