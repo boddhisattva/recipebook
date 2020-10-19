@@ -3,4 +3,16 @@ class Recipe < ContentfulModel::Base
 
   coerce_field title: :String
   coerce_field description: :Text
+
+  def photo_url
+    photo.image_url
+  end
+
+  def tag_names
+    tags&.map(&:name)&.join(', ')
+  end
+
+  def chef_name
+    chef&.name
+  end
 end

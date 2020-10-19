@@ -1,0 +1,21 @@
+<% cache @recipe do %>
+  <div>
+    <h2><%= @recipe.title %></h2>
+
+    <%= image_tag @recipe.photo_url %>
+
+    <p>
+      <% if (tag_names = @recipe.tag_names) %>
+        Tags: <%= tag_names %>
+      <% end %>
+    </p>
+
+    <p>
+      <% if (chef_name = @recipe.chef_name) %>
+        Chef: <%= chef_name %>
+      <% end %>
+    </p>
+
+    <%= parse_markdown(@recipe.description) %>
+  </div>
+<% end %>

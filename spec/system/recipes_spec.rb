@@ -30,7 +30,43 @@ describe 'Recipes', type: :system do
       it 'displays the recipe images' do
         recipe_image_urls = page.find_all('img').map { |image| image['src'] }
 
-        expect(recipe_image_urls).to match_array(RECIPE_IMAGE_URLS)
+         expect(recipe_image_urls).to match_array(RECIPE_IMAGE_URLS)
+      end
+    end
+  end
+
+  describe 'Show recipes', vcr: { cassette_name: 'show_recipe' } do
+    context 'when user is on a show recipe page' do
+      context 'specified recipe exists' do
+        let(:recipe_id) { '437eO3ORCME46i02SeCW46' }
+        let(:recipe_description) { 'Crispy chicken skin, tender meat, and rich, tomatoey sauce form a winning trifecta of delicious in this one-pot braise. We spoon it over rice and peas to soak up every last drop of goodness, and serve a tangy arugula salad alongside for a vibrant boost of flavor and color. Dinner is served! Cook, relax, and enjoy!' }
+
+        before do
+          visit recipe_path(recipe_id)
+        end
+
+        it 'displays recipe details' do
+          recipe_image_url = page.find_all('img').map { |image| image['src'] }
+
+          expect(page).to have_text(RECIPE_TITLES.last)
+          expect(recipe_image_url).to match_array(RECIPE_IMAGE_URLS.last)
+          expect(page).to have_text(recipe_description)
+        end
+
+        it 'displays associated recipe info like tag names etc.,' do
+          expect(page).to have_text('Tags: gluten free, healthy')
+          expect(page).to have_text('Chef: Jony Chives')
+        end
+      end
+
+      context 'specified recipe does not exist' do
+        let(:non_existent_recipe_id) { 'random_recipe_id' }
+
+        it 'displays page not found', vcr: { cassette_name: 'non_existent_recipe' } do
+          visit recipe_path(non_existent_recipe_id)
+
+          expect(page).to have_text("The page you were looking for doesn't exist")
+        end
       end
     end
   end

@@ -1,8 +1,10 @@
 <div>
+  <%= link_to recipe_path(recipe.id) do %>
   <div>
     <p>
       <%= recipe.title %>
     </p>
-    <%= image_tag(recipe.photo.image_url) %>
+    <%= image_tag(recipe.photo_url) %>
   </div>
+  <% end %>
 </div>
