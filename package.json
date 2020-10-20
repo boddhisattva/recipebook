@@ -11,7 +11,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress"
+    "heroku-prebuild": "npm install --dev"
   },
   "engines": {
     "node": "10.10.0"
