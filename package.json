@@ -9,7 +9,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
-  }
+  },
   "scripts": {
     "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress"
   }
