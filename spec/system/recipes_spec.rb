@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-
-
 describe 'Recipes', type: :system do
   let(:recipe_titles) { [
     'White Cheddar Grilled Cheese with Cherry Preserves & Basil',
