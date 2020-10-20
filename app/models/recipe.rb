@@ -5,7 +5,7 @@ class Recipe < ContentfulModel::Base
   coerce_field description: :Text
 
   def photo_url
-    photo.image_url
+    photo&.image_url
   end
 
   def tag_names

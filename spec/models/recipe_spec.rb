@@ -12,6 +12,15 @@ RSpec.describe Recipe do
         expect(recipe.photo_url).to eq('//images.ctfassets.net/kk2bw5ojx476/5mFyTozvSoyE0Mqseoos86/fb88f4302cfd184492e548cde11a2555/SKU1479_Hero_077-71d8a07ff8e79abcb0e6c0ebf0f3b69c.jpg')
       end
     end
+
+    context 'given a recipe that does not have an associated photo' do
+      it 'returns nil', vcr: { cassette_name: 'show_recipe' } do
+        recipe = Recipe.find(recipe_id)
+        allow(recipe).to receive(:photo) { nil }
+
+        expect(recipe.photo_url).to be_nil
+      end
+    end
   end
 
   describe '#tag_names' do
