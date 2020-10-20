@@ -6,13 +6,13 @@
 
     <p>
       <% if (tag_names = @recipe.tag_names) %>
-        Tags: <%= tag_names %>
+        <%= t '.tags' %>: <%= tag_names %>
       <% end %>
     </p>
 
     <p>
       <% if (chef_name = @recipe.chef_name) %>
-        Chef: <%= chef_name %>
+        <%= t '.chef' %>: <%= chef_name %>
       <% end %>
     </p>
 

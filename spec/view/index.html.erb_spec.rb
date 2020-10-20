@@ -8,7 +8,7 @@ RSpec.describe 'recipes/index.html.erb', type: :view do
       @recipes = Recipe.all.load
       allow(@recipes).to receive(:map) { [] }
 
-      render template: 'recipes/index.html.erb'
+      render template: 'recipes/index'
 
       expect(rendered).to have_text('There are no recipes that are currently available')
     end

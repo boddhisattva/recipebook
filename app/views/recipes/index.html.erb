@@ -1,9 +1,9 @@
 <% if @recipes.map(&:id).present? %>
-<h2>All recipes</h2>
+  <h2><%= t '.all_recipes' %></h2>
 
-<div>
-  <%= render partial: "recipe", collection: @recipes, as: :recipe, cached: true %>
-</div>
+  <div>
+    <%= render partial: "recipe", collection: @recipes, as: :recipe, cached: true %>
+  </div>
 <% else %>
-"There are no recipes that are currently available"
+  <%= t '.no_recipes_currently_available' %>
 <% end %>

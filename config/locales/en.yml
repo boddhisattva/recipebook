@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  recipes:
+    index:
+      all_recipes: "All Recipes"
+      no_recipes_currently_available: "There are no recipes that are currently available"
+    show:
+      chef: "Chef"
+      tags: "Tags"
