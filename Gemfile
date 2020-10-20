@@ -26,6 +26,9 @@ gem 'jbuilder', '~> 2.7'
 # Used for integration with Contentful CMS
 gem 'contentful_rails', '~> 0.5.0'
 
+# To use Redis as a Cache store
+gem 'redis-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
