@@ -23,14 +23,18 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Used for integration with Contentful CMS
 gem 'contentful_rails', '~> 0.5.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  # load environment variables in development environment
   gem 'dotenv-rails'
+  # Useful for step-by-step debugging and stack navigation capabilities
   gem 'pry-byebug'
+  # Behaviour Driven Development for Ruby
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
 end
 
@@ -38,16 +42,21 @@ group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '~> 3.2'
   gem 'web-console', '>= 3.3.0'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Useful for ruby related linting
   gem 'rubocop', require: false
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :test do
+  # For integration and system testing purposes
   gem 'capybara', '~> 3.33'
+  # Record one's test suite related HTTP interactions
   gem 'vcr', '~> 6.0'
+  # Run Selenium tests more easily with automatic installation and updates for all supported webdrivers.
   gem 'webdrivers', '~> 4.4', '>= 4.4.1'
+  # Stubbing and setting expectations on HTTP requests in Ruby.
   gem 'webmock', '~> 3.9', '>= 3.9.2'
 end
 
