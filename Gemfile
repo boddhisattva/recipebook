@@ -63,6 +63,8 @@ group :test do
   gem 'webdrivers', '~> 4.4', '>= 4.4.1'
   # Stubbing and setting expectations on HTTP requests in Ruby.
   gem 'webmock', '~> 3.9', '>= 3.9.2'
+  # RSpec results that one's CI server can read
+  gem 'rspec_junit_formatter', '~> 0.4.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
