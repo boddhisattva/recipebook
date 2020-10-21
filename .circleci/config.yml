@@ -39,4 +39,3 @@ jobs:
           command: bundle exec rspec -r rspec_junit_formatter \
                                      --profile 10 \
                                      --format progress \
-                                     --out test_results/rspec.xml
