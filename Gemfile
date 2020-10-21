@@ -27,7 +27,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'contentful_rails', '~> 0.5.0'
 
 # To use Redis as a Cache store
-gem 'redis-rails'
+gem 'hiredis'
+gem 'redis', '~> 4.2', '>= 4.2.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
