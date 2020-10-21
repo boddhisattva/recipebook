@@ -34,4 +34,9 @@ jobs:
       - run:
           name: Database setup
           command: bundle exec rake db:create && rake db:migrate --trace
-      - ruby/rspec-test -r rspec_junit_formatter
+      - run:
+          name: Run tests
+          command: bundle exec rspec -r rspec_junit_formatter \
+                                     --profile 10 \
+                                     --format progress \
+                                     --out test_results/rspec.xml
