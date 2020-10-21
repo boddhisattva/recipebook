@@ -7,4 +7,8 @@ VCR.configure do |config|
   config.filter_sensitive_data('<CONTENTFUL_ACCESS_TOKEN>') { ENV.fetch('CONTENTFUL_ACCESS_TOKEN') }
   config.filter_sensitive_data('<CONTENTFUL_SPACE_ID') { ENV.fetch('CONTENTFUL_SPACE_ID') }
   config.filter_sensitive_data('<CONTENTFUL_ENVIRONMENT') { ENV.fetch('CONTENTFUL_ENVIRONMENT') }
+  config.default_cassette_options = {
+    :match_requests_on => [:method,
+      VCR.request_matchers.uri_without_param(:url)]
+  }
 end
