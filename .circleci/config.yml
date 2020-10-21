@@ -20,6 +20,9 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
           cache-key: "yarn.lock"
+      - run:
+          name: Run Rspec tests
+          command: bundle exec rspec spec
 
   test:  # our next job, called "test"
     # we run "parallel job containers" to enable speeding up our tests;
