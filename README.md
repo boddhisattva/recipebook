@@ -1,5 +1,8 @@
 # Recipebook
 
+[![boddhisattva](https://circleci.com/gh/boddhisattva/recipebook.svg?style=svg)](https://app.circleci.com/pipelines/github/boddhisattva/recipebook)
+
+
 ## About
 
 This is an application to display Marley Spoon recipes using the related information present within the Contentful platform.
