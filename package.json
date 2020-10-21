@@ -16,6 +16,6 @@
     "heroku-prebuild": "npm install --dev"
   },
   "engines": {
-    "node": "10.16.3"
+    "node": "12.16.1"
   }
 }
