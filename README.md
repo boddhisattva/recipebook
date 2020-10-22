@@ -27,6 +27,9 @@ This project has been prepared for ease of deployment and one can see a working 
 
   * Out of the box support for rendering Markdown with the added ability to customise the Markdown Renderer to better suit one's needs
 
+* Leveraged collection and Russian Doll caching capabilities with regard to the recipes list and show page respectively
+
+* In order to make the app more production ready in terms of Caching, have configured using Redis as the cache store alongside using hiredis to speed up parsing multi bulk responses
 
 * Added Internationalisation capabilities so that the app is easily adaptable to support multiple languages as MarleySpoon continues to expand its presence worldwide.
 
